@@ -1,0 +1,6 @@
+.history/
+./yolo11n.pt
+./yolo11n-pose.pt
+./yolo11n-cls.pt
+./runs/
+./wandb/

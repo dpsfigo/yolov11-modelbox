@@ -1,0 +1,31 @@
+{
+  "os": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.8.13",
+  "startedAt": "2025-09-19T06:16:19.592858Z",
+  "program": "/Users/qingyuan/cv/ultralytics/train_det.py",
+  "codePath": "train_det.py",
+  "git": {
+    "remote": "https://github.com/dpsfigo/ultralytics.git",
+    "commit": "3a2824caadbf7ff88a2fbbc192f5e58c8999b1d3"
+  },
+  "root": "/Users/qingyuan/cv/ultralytics",
+  "host": "localhost",
+  "username": "qingyuan",
+  "executable": "/opt/homebrew/Caskroom/miniforge/base/envs/cpu/bin/python",
+  "codePathLocal": "train_det.py",
+  "cpu_count": 8,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "245107195904",
+      "used": "238575702016"
+    }
+  },
+  "memory": {
+    "total": "8589934592"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 8
+  }
+}

@@ -1,0 +1,21 @@
+{"time":"2025-09-19T14:25:08.120204+08:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-09-19T14:25:08.120248+08:00","level":"INFO","msg":"created symlink","path":"/Users/qingyuan/cv/ultralytics/wandb/offline-run-20250919_142507-42gqe7id/logs/debug-core.log"}
+{"time":"2025-09-19T14:25:08.120309+08:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2025-09-19T14:25:08.120313+08:00","level":"INFO","msg":"created symlink","path":"/Users/qingyuan/cv/ultralytics/wandb/offline-run-20250919_142507-42gqe7id/logs/debug-core.log"}
+{"time":"2025-09-19T14:25:08.125904+08:00","level":"INFO","msg":"created new stream","id":"42gqe7id"}
+{"time":"2025-09-19T14:25:08.125935+08:00","level":"INFO","msg":"stream: started","id":"42gqe7id"}
+{"time":"2025-09-19T14:25:08.125958+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:08.126111+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:08.126239+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:08.143474+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2025-09-19T14:25:08.151335+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-19T14:25:18.277115+08:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2025-09-19T14:25:28.254951+08:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2025-09-19T14:25:38.254707+08:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2025-09-19T14:25:40.341676+08:00","level":"INFO","msg":"stream: closing","id":"42gqe7id"}
+{"time":"2025-09-19T14:25:40.341722+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-19T14:25:40.34189+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-19T14:25:40.343108+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:40.342886+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:40.342907+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"42gqe7id"}}
+{"time":"2025-09-19T14:25:40.343535+08:00","level":"INFO","msg":"stream: closed","id":"42gqe7id"}
