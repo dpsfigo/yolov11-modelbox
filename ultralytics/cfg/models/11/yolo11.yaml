@@ -13,6 +13,13 @@ scales: # model compound scaling constants, i.e. 'model=yolo11n.yaml' will call 
 
 # YOLO11n backbone
 backbone:
+  # from 此处有三种可能的值分别是 -1、具体的数值、list存放数值。分别含义如下  (1)、-1的含义就是代表此层的输入就是上一层的输出，
+  #                                                                (2)、如果是具体的某个数字比如4那么则代表本层的输入来自于模型的第四层，
+  #                                                                (3)、有的层是list存放两个值也可能是多个值，则代表对应两个值的输出为本层的输入
+  # repeats 这个参数是为了C2f设置的其它的模块都用不到，代表着C2f当中Bottleneck重复的次数，比如当我们的模型用的是l的时候，那么repeats=2那么则代表C3k2当中的Bottleneck串行2个。
+  # module 此处则代表模型的名称
+  # args 此处代表输入到对应模块的参数，此处和parse_model函数中的定义方法有关，对于C3k2来说传入的参数->第一个参数是上一个模型的输出通道数，第二个参数就是args的第一个参数，然后以此类推。
+
   # [from, repeats, module, args]
   - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2
   - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4

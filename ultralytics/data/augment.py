@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2024-11-23 13:19:14
 LastEditors: dpsfigo
-LastEditTime: 2025-09-25 16:45:52
+LastEditTime: 2025-09-25 19:18:19
 Description: 用于数据增强相关的函数和工具
 '''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
@@ -325,6 +325,7 @@ class Compose:
 class BaseMixTransform:
     """
     Base class for mix transformations like MixUp and Mosaic.
+    基于混合(MixUp/Mosaic)变换的基类。
 
     This class provides a foundation for implementing mix transformations on datasets. It handles the
     probability-based application of transforms and manages the mixing of multiple images and labels.
@@ -376,6 +377,7 @@ class BaseMixTransform:
     def __call__(self, labels):
         """
         Applies pre-processing transforms and mixup/mosaic transforms to labels data.
+        应用预处理变换和 MixUp/Mosaic 变换到标签数据。
 
         This method determines whether to apply the mix transform based on a probability factor. If applied, it
         selects additional images, applies pre-transforms if specified, and then performs the mix transform.
@@ -498,6 +500,7 @@ class Mosaic(BaseMixTransform):
     Mosaic augmentation for image datasets.
 
     This class performs mosaic augmentation by combining multiple (4 or 9) images into a single mosaic image.
+    这个类通过将多个图像(4或9)组合成一个马赛克图像来实现马赛克增强。
     The augmentation is applied to a dataset with a given probability.
 
     Attributes:
