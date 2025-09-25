@@ -4,7 +4,4 @@
 ./yolo11n-cls.pt
 ./runs/
 /wandb/
-./wandb/debug.log
-./wandb/debug*.log
-./wandb/latest-run
 .DS_Store
