@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:54:24
+Description: 用于数据转换和格式转换的工具
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import json

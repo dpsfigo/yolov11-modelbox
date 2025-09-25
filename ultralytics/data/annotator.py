@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:45:17
+Description: 用于数据注释的工具
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 from pathlib import Path

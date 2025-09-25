@@ -1,3 +1,11 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:30:52
+Description: 测试底层推理引擎，如模型加载和数据处理等。
+'''
+
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import sys

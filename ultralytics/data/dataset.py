@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:54:49
+Description: 用于数据集加载和处理的类
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import json

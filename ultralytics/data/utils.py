@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:56:27
+Description: 用于数据处理和验证的通用工具函数
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import hashlib

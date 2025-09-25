@@ -1,3 +1,11 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:31:17
+Description: 专门测试项目是否能正确使用NVIDIA 的CUDA技术，确保GPU加速功能正常
+'''
+
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 from itertools import product

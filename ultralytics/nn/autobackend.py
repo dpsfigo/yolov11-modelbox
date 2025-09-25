@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 17:24:42
+Description: 用于自动选择最优的计算后端,支持多种模型格式和推理引擎
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import ast

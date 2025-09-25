@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2025-09-19 14:06:54
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 17:24:00
+Description: 定义了不同任务的模型基类和具体实现
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 from .customermodules import *
 import contextlib

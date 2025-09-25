@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:53:59
+Description: 用于构建数据集和数据加载器
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import os

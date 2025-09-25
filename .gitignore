@@ -3,4 +3,8 @@
 ./yolo11n-pose.pt
 ./yolo11n-cls.pt
 ./runs/
-./wandb/
+/wandb/
+./wandb/debug.log
+./wandb/debug*.log
+./wandb/latest-run
+.DS_Store

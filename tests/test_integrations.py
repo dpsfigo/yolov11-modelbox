@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:32:05
+Description: 测试项目与其他服务或库的集成是否正常工作。
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import contextlib

@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 17:01:13
+Description: 模型定义、初始化和加载的方法
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import inspect

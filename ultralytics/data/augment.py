@@ -1,3 +1,10 @@
+'''
+Author: dpsfigo
+Date: 2024-11-23 13:19:14
+LastEditors: dpsfigo
+LastEditTime: 2025-09-25 16:45:52
+Description: 用于数据增强相关的函数和工具
+'''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
 import math

@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2024-11-23 13:34:24
 LastEditors: dpsfigo
-LastEditTime: 2025-09-19 14:16:07
+LastEditTime: 2025-09-25 13:37:42
 Description: 请填写简介
 '''
 import os
@@ -26,7 +26,7 @@ model.load('yolo11n.pt')
 model.train(data='coco8.yaml', 
             imgsz=640,
             device='cpu',
-            epochs=150,
+            epochs=10,
             batch=4,
             optimizer='SGD',
             amp=False
