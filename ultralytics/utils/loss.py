@@ -208,10 +208,20 @@ class v8DetectionLoss:
         """Calculate the sum of the loss for box, cls and dfl multiplied by batch size."""
         loss = torch.zeros(3, device=self.device)  # box, cls, dfl
         feats = preds[1] if isinstance(preds, tuple) else preds
+        # 情况1（训练时）在检测头代码中我们如果是训练则直接return x
+        # 在情况1时我们此时返回的是list列表,其中返回的形状是我的nc=80
+        # （batch_size, nc + reg_max * 4=114, 80, 80）
+        # （batch_size, nc + reg_max * 4=114, 40, 40）
+        # （batch_size, nc + reg_max * 4=114, 20, 20）
+        # 情况2（训练时的验证阶段）此时我们返回的是元组
+        # 元组里面包含了上面的x除此之外还额外包含我们预测的信息
+        # 形状为（batch_size * 2, nc + 四个位置的信息 = 84, 20 * 20 + 40 * 40 + 80 * 80 = 8400）
         pred_distri, pred_scores = torch.cat([xi.view(feats[0].shape[0], self.no, -1) for xi in feats], 2).split(
             (self.reg_max * 4, self.nc), 1
         )
 
+        # pred_distri表示模型预测的每个锚点位置的边界框分布（共8400个锚点）
+        # pred_scores表示模型预测的每个锚点位置的分类分数 （共8400个锚点）
         pred_scores = pred_scores.permute(0, 2, 1).contiguous()
         pred_distri = pred_distri.permute(0, 2, 1).contiguous()
 
