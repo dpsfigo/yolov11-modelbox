@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2024-11-23 13:19:14
 LastEditors: dpsfigo
-LastEditTime: 2025-09-25 17:01:13
+LastEditTime: 2025-09-26 13:43:06
 Description: 模型定义、初始化和加载的方法
 '''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
@@ -797,7 +797,12 @@ class Model(nn.Module):
             "task": self.task,
         }  # method defaults
         args = {**overrides, **custom, **kwargs, "mode": "train"}  # highest priority args on the right
-        if args.get("resume"):
+        if args.get("resume"): #不续训的时候手动设置模型
+            '''
+            此处比较重要,为开始定义我们的对应任务的模型了比如我这里task设置的为Detect,那么此处会实例化DetectModel模型。
+            模型存放在ultralytics/nn/tasks.py内（就是我们修改模型时候的用到的那个task.py文件）
+            此处就会跳转到'ultralytics/nn/tasks.py'文件内的class DetectionModel(BaseModel):类中进行初始化和模型的定义工作
+            '''
             args["resume"] = self.ckpt_path
 
         self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)

@@ -36,10 +36,20 @@ class Detect(nn.Module):
         super().__init__()
         self.nc = nc  # number of classes
         self.nl = len(ch)  # number of detection layers
+        # DFL 通道数量 (每个预测框的回归输出通道数, 具体来说就是YOLOv8是Anchor Free模型,
+        # 对于每一个预测框我们需要确定四个坐标才能够知道其形状(也就是我们的检测出来物体的外部框形状)四个坐标分别为
+        # x - 边界框的中心点 x 坐标
+        # y - 边界框的中心点 y 坐标
+        # w - 边界框的宽度
+        # h - 边界框的高度
         self.reg_max = 16  # DFL channels (ch[0] // 16 to scale 4/8/12/16/20 for n/s/m/l/x)
         self.no = nc + self.reg_max * 4  # number of outputs per anchor
+        # 初始化 stride, stride的含义即缩放比例是特征图相对于原始输入图像的缩放比例。
+        # 假设原始输入图像的大小为 640x640，特征图的大小为 80x80，那么 stride 就是640÷80=8。这意味着输入图像中每 8 个像素对应特征图中的一个像素。
         self.stride = torch.zeros(self.nl)  # strides computed during build
+
         c2, c3 = max((16, ch[0] // 4, self.reg_max * 4)), max(ch[0], min(self.nc, 100))  # channels
+        # 定义两个卷积层序列列表，一个用于回归，一个用于分类
         self.cv2 = nn.ModuleList(
             nn.Sequential(Conv(x, c2, 3), Conv(c2, c2, 3), nn.Conv2d(c2, 4 * self.reg_max, 1)) for x in ch
         )

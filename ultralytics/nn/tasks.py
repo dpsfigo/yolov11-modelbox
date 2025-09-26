@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2025-09-19 14:06:54
 LastEditors: dpsfigo
-LastEditTime: 2025-09-25 17:24:00
+LastEditTime: 2025-09-26 14:05:33
 Description: 定义了不同任务的模型基类和具体实现
 '''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
@@ -351,6 +351,10 @@ class DetectionModel(BaseModel):
         if nc and nc != self.yaml["nc"]:
             LOGGER.info(f"Overriding model.yaml nc={self.yaml['nc']} with nc={nc}")
             self.yaml["nc"] = nc  # override YAML value
+        """ 此处最为重要，涉及到了我们修改模型的配置的那个函数parse_model,
+            这里返回了我们的每一个模块的定义，也就是self.model保存了我们的ymal文件所有模块的实例化模型
+            self.save保存列表 | 也就是除了from部分为-1的部分比如from为4那么就将第四层的索引保存这里留着后面备用，
+        """
         self.model, self.save = parse_model(deepcopy(self.yaml), ch=ch, verbose=verbose)  # model, savelist
         self.names = {i: f"{i}" for i in range(self.yaml["nc"])}  # default names dict
         self.inplace = self.yaml.get("inplace", True)
@@ -1010,7 +1014,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 with contextlib.suppress(ValueError):
                     args[j] = locals()[a] if a in locals() else ast.literal_eval(a)
 
-        # n = n_ = max(round(n * depth), 1) if n > 1 else n  # depth gain
+        n = n_ = max(round(n * depth), 1) if n > 1 else n  # depth gain
         # if m in {
         #     Classify, Conv, ConvTranspose, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, C2fPSA, C2PSA, DWConv,
         #     Focus, BottleneckCSP, C1, C2, C2f, C3k2, RepNCSPELAN4, ELAN1, ADown, AConv, SPPELAN, C2fAttn, C3, C3TR,
@@ -1040,6 +1044,9 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 args[2] = int(
                     max(round(min(args[2], max_channels // 2 // 32)) * width, 1) if args[2] > 1 else args[2]
                 )  # num heads
+            """ 这个args就是传入到我们模型的参数,C1就是上一层的或者指定层的输出的通道数，C2就是本层的输出通道数， *args[1:]就是其它的一些参数比如卷积核步长什么的"""
+            """ 此处和注意力机制不同的是，为什么注意力机制不在此处添加因为注意力机制不改变模型的维度，所以一般只需要指定一个输入通道数就行，
+                所以这也是为什么我们在后面定义注意力需要额外添加代码的原因"""
 
             args = [c1, c2, *args[1:]]
             if m in {
