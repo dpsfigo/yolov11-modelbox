@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2024-11-23 13:34:24
 LastEditors: dpsfigo
-LastEditTime: 2025-09-28 17:19:41
+LastEditTime: 2025-09-29 16:32:54
 Description: 请填写简介
 '''
 import os
@@ -19,7 +19,7 @@ from ultralytics import YOLO
 # model = YOLO("yolo11n-pose.yaml").load("yolo11n-pose.pt")  # build from YAML and transfer weights
 
 # Train the model
-model = YOLO("/Users/qingyuan/cv/ultralytics/ultralytics/cfg/models/11/yolo11-MobileNetV1.yaml")
+model = YOLO("/Users/qingyuan/cv/ultralytics/ultralytics/cfg/models/11/yolo11-MobileNetV2.yaml")
 model.load('yolo11n.pt') 
 model.train(data='coco8.yaml', 
             imgsz=640,

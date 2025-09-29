@@ -2,7 +2,7 @@
 Author: dpsfigo
 Date: 2025-09-19 14:06:54
 LastEditors: dpsfigo
-LastEditTime: 2025-09-26 14:05:33
+LastEditTime: 2025-09-29 16:33:18
 Description: 定义了不同任务的模型基类和具体实现
 '''
 # Ultralytics YOLO 🚀, AGPL-3.0 license
@@ -1089,7 +1089,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             # transnext_tiny, transnext_small, transnext_base, transnext_micro,
             # efficient, efficientnet_v2,
             MobileNetV1_n, MobileNetV1_s, MobileNetV1_m,
-            #MobileNetV2_n, MobileNetV2_s, MobileNetV2_m,
+            MobileNetV2_n, MobileNetV2_s, MobileNetV2_m,
             # MobileNetV3_large_n, MobileNetV3_large_s, MobileNetV3_large_m, MobileNetV3_small_n, MobileNetV3_small_s,
             # MobileNetV3_small_m,
             # MobileNetV4ConvSmall, MobileNetV4HybridMedium, MobileNetV4ConvMedium, MobileNetV4ConvLarge,
